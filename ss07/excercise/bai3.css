@@ -1,0 +1,98 @@
+#main {
+    font-family: Arial;
+}
+
+#head {
+    margin: 2px;
+    width: 100%;
+    height: 65px;
+    background-color: darkgray;
+}
+
+#head-link {
+    margin: 2px;
+    width: 100%;
+    height: 40px;
+    background-color: darkgray;
+    display: flex;
+    justify-content: center; /* Center the links horizontally */
+    align-items: center;
+}
+
+#main #head-link a {
+    text-decoration: none;
+    text-align: center;
+    margin: 0 10px; /* Add some margin to separate the links */
+    color: black;
+
+}
+
+#main #head-link a:not(:last-child)::after {
+    content: "|";
+    /*'loại bỏ các phần tử ở cuối và đằng sau mỗi thẻ a sẽ thêm dấu |'*/
+    margin-left: 10px;
+}
+
+#left {
+    margin-top: 10px;
+    width: 35%;
+    height: 900px;
+    background-color: darkgrey;
+    float: left;
+    flex-direction: column;
+}
+
+#main #left iframe {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#main #left p {
+    color: black;
+}
+
+#content {
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 63%;
+    height: 900px;
+    background-color: blanchedalmond;
+    float: left;
+}
+
+#main #content iframe {
+
+    width: 100%;
+    height: 400px;
+}
+
+#footer {
+    margin-top: 10px;
+    width: 100%;
+    clear: both;
+    background-color: darkgrey;
+}
+
+#main #footer h1 {
+    text-align: center;
+    color: black;
+}
+
+#main #head i {
+    display: flex;
+
+    justify-items: left;
+}
+
+#main #head p {
+
+
+    margin-left: 10px; /* Thêm khoảng cách bên trái */
+}
+
+#main #head i {
+    margin-left: auto; /* Đẩy nút heart sang phải cùng */
+}

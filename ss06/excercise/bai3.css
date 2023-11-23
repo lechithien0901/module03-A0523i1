@@ -1,0 +1,45 @@
+.thaydoi1 {
+    font-size: 100px;
+    text-align: justify;
+    font-family: "Times New Roman";
+    font-weight: bold;
+    color: cyan;
+}
+
+body {
+    background: darkgray;
+    font-family: Arial;
+}
+
+.container {
+    border: solid;
+    border-color: coral;
+    border-width: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+img {
+    width: 600px;
+    weight: 1000px;
+}
+
+.text {
+    font-size: 28px;
+    padding-left: 20px;
+
+}
+
+.thaydoi3 li a {
+    font-size: 45px;
+    text-align: left;
+    list-style: none;
+    text-decoration: none;
+}
+
+.thaydoi3 li {
+    list-style: none;
+    text-align: left;
+}

@@ -1,0 +1,16 @@
+h1 {
+    text-align: left;
+    font-family: "Times New Roman";
+    font-size: 50px;
+    color: green;
+    text-align: justify;
+
+
+}
+
+p {
+    text-align: justify;
+    color: blue;
+    font-family: "Times New Roman";
+    font-size: 20px;
+}

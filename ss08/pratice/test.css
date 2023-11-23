@@ -1,0 +1,20 @@
+.relative-container {
+    position: relative;
+    width: 300px; /* Điều chỉnh kích thước container tùy thuộc vào nhu cầu của bạn */
+}
+
+.relative-image {
+    width: 100%; /* Để ảnh điền vào container */
+    height: auto; /* Đảm bảo chiều cao tự động theo tỷ lệ */
+}
+
+.absolute-text {
+    position: absolute;
+    top: 50%; /* Đặt ở giữa theo chiều dọc */
+    left: 50%; /* Đặt ở giữa theo chiều ngang */
+    transform: translate(-50%, -50%); /* Dịch chuyển lên và sang trái để căn giữa hoàn toàn */
+    color: white; /* Màu chữ */
+    font-size: 24px; /* Kích thước chữ */
+    font-weight: bold; /* Độ đậm của chữ */
+    text-align: center; /* Canh giữa theo chiều ngang */
+}

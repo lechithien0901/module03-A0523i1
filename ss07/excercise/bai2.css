@@ -1,0 +1,126 @@
+#main {
+    font-family: Arial;
+}
+
+#head-link {
+    border-style: solid;
+    width: 100%;
+    height: 20%;
+    display: flex;
+    background-color: darkgray;
+
+}
+
+#head-link button {
+    padding: 10px;
+    color: white; /* Set text color to white */
+    height: 50px;
+    border: none;
+    background-color: darkgray; /* Inherit the background color from head-link */
+    cursor: pointer
+}
+
+#head-link button:hover {
+    background-color: black;
+    color: white;;
+}
+
+#head-link .chinhsua button {
+    text-align: right;
+}
+
+#head-link .chinhsua {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+#left {
+    float: left;
+    border-style: solid;
+    height: 600px;
+    width: 20%;
+
+
+}
+
+#left {
+    float: left;
+    border-style: solid;
+    height: 600px;
+    width: 13%;
+    display: flex;
+    align-content: center;
+    flex-direction: column; /* Chỉnh flex-direction thành column */
+    border-style: none;
+    background-color: darkgray;
+
+}
+
+#main #left a {
+    text-decoration: none;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: blue;
+
+
+}
+
+#content {
+    float: left;
+    height: 600px;
+    width: 70%;
+
+}
+
+#content p {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+#main #left p:last-child {
+    border-bottom: none; /* Loại bỏ đường kẻ ngang ở cuối cùng */
+}
+
+#right {
+    float: left;
+    border-style: solid;
+    height: 600px;
+    width: 16%;
+    display: flex;
+    flex-direction: column; /* Chỉnh flex-direction thành column */
+    border-style: none;
+    background-color: darkgray;
+    margin-left: 11px;
+
+}
+
+#main #right button {
+    text-decoration: none;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: blue;
+    padding: 10px;
+    flex-grow: 1; /* Duyệt ra tất cả các chiều dọc để các liên kết cách đều nhau */
+}
+
+
+#footer {
+    margin-top: 10px; /* Adjust the margin as needed */
+    width: 100%;
+    background-color: lightgray;
+    height: 45px /* Set the background color for the footer */;
+    clear: both;
+}
+
+#main #footer p {
+    text-align: center;
+    margin: 0;
+
+    color: blue;
+}
