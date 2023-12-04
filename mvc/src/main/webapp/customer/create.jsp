@@ -26,7 +26,7 @@
 <p>
     <a href="/customers">Back to the menu</a>
 </p>
-<form method="post">
+<form method="post" action="/customers?action=create">
     <fieldset>
         <legend>Customer Information</legend>
         <table>

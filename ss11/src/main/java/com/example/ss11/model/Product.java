@@ -15,6 +15,13 @@ public class Product {
         this.producer = producer;
     }
 
+    public Product(String nameProduct, double salaryProduct, String productDescription, String producer) {
+        this.nameProduct = nameProduct;
+        this.salaryProduct = salaryProduct;
+        this.productDescription = productDescription;
+        this.producer = producer;
+    }
+
     public Product() {
     }
 
