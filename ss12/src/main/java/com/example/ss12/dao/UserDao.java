@@ -2,10 +2,7 @@ package com.example.ss12.dao;
 
 import com.example.ss12.model.User;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,6 +15,8 @@ public class UserDao implements IUserDao {
     private static final String UPDATE_USERS_SQL = "update users set name=?,email=?,country=?where id=?";
     private static final String ORDER_USER_BY_NAME = "select id,name,email,country from users order by name;";
     private static final String SELECT_USER_BY_COUNTRY = "select id,name,email,country from users where country=?;";
+    private static final String QUERY="CALL get_user_by_id(?)";
+    private static final String INSERT_USER="call insert_user(?);";
 
     @Override
     public void insertUser(User user) {
@@ -63,7 +62,6 @@ public class UserDao implements IUserDao {
     @Override
     public List<User> selectAllUser() {
         List<User> users = new ArrayList<>();
-        // Step 1: Establishing a Connection
         try (Connection connection = BaseDao.getConnection();
 
 
@@ -173,5 +171,68 @@ public class UserDao implements IUserDao {
         }
 
         return user;
+    }
+
+    @Override
+    public void insertUserStore(User user) throws SQLException {
+        Connection connection=BaseDao.getConnection();
+        CallableStatement callableStatement=connection.prepareCall(INSERT_USER);
+        callableStatement.setString(1,user.getName());
+        callableStatement.setString(2,user.getEmail());
+        callableStatement.setString(3,user.getCountry());
+        callableStatement.executeUpdate();
+
+
+    }
+
+    @Override
+    public User getUserById(int id) {
+        User user=null;
+        Connection connection=BaseDao.getConnection();
+        try {
+            CallableStatement callableStatement=connection.prepareCall(QUERY);
+            callableStatement.setInt(1,id);
+            ResultSet resultSet=callableStatement.executeQuery();
+            while (resultSet.next()){
+                String name=resultSet.getString("name");
+                String email=resultSet.getString("email");
+                String country=resultSet.getString("country");
+                user=new User(id,name,email,country);
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return user;
+    }
+
+    @Override
+    public void addUserTransaction(User user, int[] permision) {
+        Connection connection=null;
+        PreparedStatement pstmt=null;
+        PreparedStatement pstmtAssigment=null;
+        ResultSet resultSet=null;
+        try {
+            connection=BaseDao.getConnection();
+            connection.setAutoCommit(false);
+            pstmt=connection.prepareStatement(INSERT_USERS_SQL,Statement.RETURN_GENERATED_KEYS);
+            pstmt.setString(1,user.getName());
+            pstmt.setString(2,user.getEmail());
+            pstmt.setString(3,user.getCountry());
+            int rowAffected=pstmt.executeUpdate();
+            resultSet=pstmt.getGeneratedKeys();
+            int userId=0;
+            if (resultSet.next()){
+                userId=resultSet.getInt(1);
+
+            }
+if (rowAffected==1){
+
+}
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }
